@@ -1,17 +1,6 @@
 let component = ReasonReact.statelessComponent("Home");
 
-[@bs.module] external agentLogo : string = "../assets/agent-logo.svg";
-
-[@bs.module] external scriptLogo : string = "../assets/script18-logo.svg";
-
-[@bs.module]
-external reasonViennaLogo : string = "../assets/reasonvienna-logo.svg";
-
-[@bs.module] external reactViennaLogo : string = "../assets/React-Vienna.svg";
-
 open Utils;
-
-open Data;
 
 module Link = Gatsby.Link;
 
