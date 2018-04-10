@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css?family=Assistant|Montserrat:700");
+@import "./variables.scss";
+@import "./tickets.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font: 13pt/1.3 $mainFontFamily;
+  color: $textColor;
+  @media (min-width: 768px) {
+    font-size: 15pt;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  font-family: $displayFontFamily;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+
+// define styles for a tag
+a {
+  @include link($primaryColor);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea {
+  border: 1px solid desaturate(darken($secondaryColor, $amount: 20), 30);
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $secondaryColor;
+  }
+}
+button {
+  &:focus {
+    outline: none;
+
+    box-shadow: 0 0 0 2px saturate(lighten($primaryColor, 20) 30);
+  }
+}
+article {
+  > section {
+    @extend .grid;
+    @extend .grid-6col;
+
+    @media (min-width: 768px) {
+      grid-row-gap: 0 !important;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        grid-column: 1 / span 6;
+      }
+      h2 {
+        grid-column-start: 1;
+        grid-column-end: 5;
+      }
+      main {
+        grid-column: 1 / span 4;
+        //border: 1px solid #000;
+        //width: 768px;
+        //margin: 0 auto;
+        &.full {
+          grid-column: 1 / span 6;
+        }
+      }
+      aside {
+        grid-column: 5 / span 2;
+      }
+    }
+  }
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.subscribe {
+  margin-top: auto;
+}
+
+.container {
+  &_centered {
+    margin: 0 auto;
+    padding: 20px;
+    width: 900px;
+    @media (max-width: 900px) {
+      width: auto;
+      max-width: 900px;
+    }
+  }
+}
+/* main grid layout  */
+.grid {
+  display: grid;
+
+  @media (min-width: 768px) {
+    grid-gap: 25px;
+  }
+}
+
+// .grid-4col {
+//   @media (min-width: 768px) {
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+// }
+.grid-6col {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* home page header section */
+.teaser {
+  padding-bottom: 30px;
+
+  background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
+  background-size: cover;
+  color: transparentize(darken($secondaryColor, 55%), 0.1);
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 8vmin));
+  min-height: 34vmin;
+
+  @media (min-width: 768px) {
+    text-align: left;
+    background-position-y: var(--header-ty);
+  }
+
+  .grid {
+    position: relative;
+    grid-gap: 10px;
+  }
+
+  &--navigation {
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px 0;
+    }
+  }
+  /* push logo to so that aligns to end/rights side of div with no margin */
+  &--logo {
+    margin: 10px 0 0;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+      align-self: start;
+    }
+  }
+  &--image {
+    width: 100%;
+    max-width: 400px;
+    @media (min-width: 768px) {
+      display: block;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+  &--main {
+    margin-top: 1em;
+    font-size: small;
+  }
+  &--tagline {
+    margin-top: 0.5rem;
+    font-size: xx-large;
+    font-weight: bold;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 4;
+      margin: 0.5rem 1rem 2rem 0;
+    }
+  }
+
+  &--dates {
+    margin: 0;
+    white-space: nowrap;
+
+    @media (min-width: 768px) {
+      grid-column: 5 / span 2;
+      grid-row: 1;
+      align-self: end;
+      font-size: xx-large;
+      line-height: 2.5rem;
+    }
+  }
+  &--location {
+    margin: 0;
+    font-size: 1.5em;
+    @media (min-width: 768px) {
+      grid-column: 5 / span 2;
+      grid-row: 2;
+      align-self: start;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+/* Offering & Timeline */
+
+.offering {
+  .grid {
+    grid-row-gap: 0;
+  }
+  &--heading {
+    margin: 0;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
+  }
+
+  &--text {
+    margin: 0;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+  }
+}
+
+.timeline {
+  @media (min-width: 768px) {
+    grid-column: 3 / span 4;
+    grid-row: 1 / span 2;
+  }
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 20px;
+
+  &--date {
+    margin: 0.1em 0;
+    font-size: 0.9rem;
+    text-align: right;
+    @media (min-width: 768px) {
+      width: 157px;
+    }
+  }
+  &--date > time {
+    color: #888;
+  }
+
+  &--content {
+    margin: 0;
+  }
+  &--content > h3 {
+    margin: 0;
+  }
+}
+
+/* Speakers section */
+.speakers {
+  position: relative;
+  overflow: visible;
+
+  &::before {
+    position: absolute;
+    top: -100px;
+    background: url("../assets/speakers-bg.svg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 1000px;
+    z-index: -1;
+    content: "";
+    @media (min-width: 768px) {
+      background-position-y: calc(var(--speakers-ty) * 1 / 8);
+    }
+  }
+}
+
+/* Speakers list grid */
+.speaker-list {
+  display: grid;
+  justify-items: start;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  position: relative;
+  margin: 40px 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 60px;
+  }
+  &--item {
+    margin: 0;
+    padding: 0;
+  }
+}
+.extraText {
+  font-weight: bolder;
+}
+.partners {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+
+  &--listItem {
+    flex: 1 1 auto;
+    max-width: 200px;
+    margin: 10px;
+    padding: 0;
+  }
+  &--logo {
+    display: block;
+    text-align: center;
+    background: none !important;
+
+    img {
+      display: inline-block;
+      height: 80px;
+    }
+  }
+}
+
+.subscribe {
+  // grid-column: 2 / span 4;
+  padding: 5vmin 0 7vmin;
+  margin-bottom: -6vmin;
+  background-color: transparentize($secondaryColor, 0.5);
+  clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
+  h2 {
+    grid-column: span 2;
+    margin: 0;
+  }
+  form {
+    @media (min-width: 768px) {
+      grid-column: 3 / span 3;
+    }
+  }
+}
+
+.thanks {
+  margin: 3rem 0;
+  &--grid {
+    grid-column: 2 / span 4;
+  }
+}
+.sponsor-tiers {
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+  }
+}

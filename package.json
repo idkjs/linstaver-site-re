@@ -1,0 +1,43 @@
+{
+  "name": "linstaver-site",
+  "description": "linstaver-site",
+  "version": "1.0.0",
+  "author": "Alain Armand <aarmand.inbox@gmail.com",
+  "dependencies": {
+    "basicscroll": "^2.1.1",
+    "gatsby-plugin-google-analytics": "^1.0.28",
+    "marked": "^0.3.19",
+    "normalize.css": "^8.0.0",
+    "re-classnames": "^1.0.0",
+    "react-helmet": "^5.2.0",
+    "react-social-icons": "^2.8.1",
+    "reason-react": "^0.3.4"
+  },
+  "keywords": ["gatsby"],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "re:build": "bsb -make-world",
+    "re:start": "bsb -make-world -w",
+    "re:clean": "bsb -clean-world",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.re": ["refmt --in-place", "git add"],
+    "*.{js,json,md,css,scss}": ["prettier --write", "git add"]
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "bs-platform": "^2.1.0",
+    "gatsby": "^1.9.243",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-postcss-sass": "^1.0.19",
+    "gatsby-plugin-react-helmet": "^2.0.8",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.2",
+    "prettier": "^1.11.1"
+  },
+  "browserslist": ["> 1%", "last 2 versions", "IE 11"]
+}
