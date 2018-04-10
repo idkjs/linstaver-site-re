@@ -11,19 +11,18 @@ let make = _children => {
       <h1> ("About Linstaver" |> s) </h1>
       <h2> ("Mission" |> s) </h2>
       <main>
-        <p>
-          ({js|
-                Our mission is....
-              |js} |> s)
-        </p>
-        <p>
-          (
-            {js|
-                Another goal is to ....
-              |js} |> s
-          )
-        </p>
-      </main>
+
+          <p> ({js|
+                Coming soon...
+              |js} |> s) </p>
+        </main>
+        /* <p>
+             (
+               {js|
+                   Another goal is to ....
+                 |js} |> s
+             )
+           </p> */
       <main />
     </section>,
 };
