@@ -80,9 +80,6 @@ article {
       }
       main {
         grid-column: 1 / span 4;
-        //border: 1px solid #000;
-        //width: 768px;
-        //margin: 0 auto;
         &.full {
           grid-column: 1 / span 6;
         }
@@ -105,7 +102,7 @@ article {
 .container {
   &_centered {
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     width: 900px;
     @media (max-width: 900px) {
       width: auto;
@@ -135,9 +132,9 @@ article {
 
 /* home page header section */
 .teaser {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 
-  background: url(../assets/offices.svg) 25% top no-repeat;
+  // background: url(../assets/offices.svg) 25% top no-repeat;
   background-size: cover;
   color: transparentize(darken($secondaryColor, 55%), 0.1);
 
@@ -194,29 +191,6 @@ article {
       margin: 0.5rem 1rem 2rem 0;
     }
   }
-
-  &--dates {
-    margin: 0;
-    white-space: nowrap;
-
-    @media (min-width: 768px) {
-      grid-column: 5 / span 2;
-      grid-row: 1;
-      align-self: end;
-      font-size: xx-large;
-      line-height: 2.5rem;
-    }
-  }
-  &--location {
-    margin: 0;
-    font-size: 1.5em;
-    @media (min-width: 768px) {
-      grid-column: 5 / span 2;
-      grid-row: 2;
-      align-self: start;
-      margin-top: 0.5rem;
-    }
-  }
 }
 
 /* Offering & Timeline */
@@ -242,34 +216,6 @@ article {
   }
 }
 
-.timeline {
-  @media (min-width: 768px) {
-    grid-column: 3 / span 4;
-    grid-row: 1 / span 2;
-  }
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-gap: 20px;
-
-  &--date {
-    margin: 0.1em 0;
-    font-size: 0.9rem;
-    text-align: right;
-    @media (min-width: 768px) {
-      width: 157px;
-    }
-  }
-  &--date > time {
-    color: #888;
-  }
-
-  &--content {
-    margin: 0;
-  }
-  &--content > h3 {
-    margin: 0;
-  }
-}
 
 /* Speakers section */
 .speakers {

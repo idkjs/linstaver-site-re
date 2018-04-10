@@ -4,15 +4,16 @@ $footerTextColor: desaturate(darken($secondaryColor, 35), 30);
 $footerLinkColor: desaturate(darken($secondaryColor, 20), 30);
 
 .root {
+  display: flex;
   padding-top: 2em;
   color: $footerTextColor;
   font-size: smaller;
   background: rgb(35, 50, 57);
   clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
 
-  :global(.grid) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  // :global(.grid) {
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
   nav > ul {
     margin: 0;
     padding: 0;
@@ -23,19 +24,6 @@ $footerLinkColor: desaturate(darken($secondaryColor, 20), 30);
   }
   a {
     @include link($footerLinkColor);
-  }
-}
-.socialIcon {
-  background: none !important;
-
-  :global(svg g.social-svg-mask path) {
-    fill: none;
-  }
-  :global(svg g.social-svg-icon path) {
-    fill: $footerTextColor;
-  }
-  &:hover :global(svg g.social-svg-icon path) {
-    fill: lighten($footerTextColor, 10%);
   }
 }
 

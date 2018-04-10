@@ -17,7 +17,7 @@ let make = (~location, children) => {
   render: _self => {
     let isHomepage = location##pathname == "/";
     /* check if on thanks page, if so dont render */
-    let isThanksPage = location##pathname == "/thanks/";
+    /* let isThanksPage = location##pathname == "/thanks/"; */
     <div className="page">
       <Helmet title />
       (
