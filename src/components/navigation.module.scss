@@ -73,8 +73,21 @@
 
 .logo {
   height: 2em;
+  color: white;
+  top: 30px;
+  left: 45px;
+  font-size: 18px;
+  font-weight: 900;
+  position: absolute;
 }
-
+// .menu .logo {
+//   color: white;
+//   top: 30px;
+//   left: 45px;
+//   font-size: 18px;
+//   font-weight: 900;
+//   position: absolute;
+// }
 .ticketsButton {
   composes: root from "./button.module.scss";
   composes: link;

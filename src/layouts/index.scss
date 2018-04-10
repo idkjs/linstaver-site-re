@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Assistant|Montserrat:700");
 @import "./variables.scss";
-@import "./tickets.scss";
+// @import "./tickets.scss";
 
 * {
   box-sizing: border-box;
@@ -137,7 +137,7 @@ article {
 .teaser {
   padding-bottom: 30px;
 
-  background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
+  background: url(../assets/offices.svg) 25% top no-repeat;
   background-size: cover;
   color: transparentize(darken($secondaryColor, 55%), 0.1);
 

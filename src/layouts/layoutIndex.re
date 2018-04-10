@@ -10,7 +10,7 @@ module Helmet = Gatsby.Helmet;
 /* reason version of templatewrapper component */
 let component = ReasonReact.statelessComponent("TemplateWrapper");
 
-let title = "DemoConf 2018";
+let title = "Linstaver";
 
 let make = (~location, children) => {
   ...component,
@@ -19,15 +19,7 @@ let make = (~location, children) => {
     /* check if on thanks page, if so dont render */
     let isThanksPage = location##pathname == "/thanks/";
     <div className="page">
-      <Helmet title>
-        <script src="https://js.tito.io/v1" async=Js.true_ />
-        <link
-          rel="stylesheet"
-          _type="text/css"
-          href="https://css.tito.io/v1.1"
-        />
-      </Helmet>
-      /* get tito service css stylesheet */
+      <Helmet title />
       (
         if (isHomepage) {
           <main> (children()) </main>;
@@ -37,17 +29,6 @@ let make = (~location, children) => {
             <article> (children()) </article>
           </div>;
         }
-      )
-      (
-        Utils.componentOrNull(
-          ! isThanksPage,
-          <footer className="subscribe">
-            <div className="container_centered grid grid-6col">
-              <h2> ("Subscribe to Newsletter" |> Utils.s) </h2>
-              <SubscribeForm />
-            </div>
-          </footer>,
-        )
       )
       <Footer />
     </div>;

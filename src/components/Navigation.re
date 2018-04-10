@@ -23,15 +23,13 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
     let activeClassName =
       navigationLocation == Header ? style##link_active : "";
     /* Use link style for tickets link in the footer */
-    let ticketsClassName =
-      navigationLocation == Header ? style##ticketsButton : "";
     <nav className=rootClassName>
       (
         componentOrNull(
           ! isHomePage,
           <Link to_="/" className=style##link_home>
-            <img src=Assets.logo alt="Home" className=style##logo />
-          </Link>,
+             <div className=style##logo> (s("LINSTAVER.COM")) </div> </Link>,
+            /* <img src=Assets.logo alt="Home" className=style##logo /> */
         )
       )
       <ul className=style##list>
