@@ -47,7 +47,6 @@ let make = _children => {
                   {js|
 ### Our Company
 
-Linstaver  is and  Investment, Importer and Exporter Company based in Belgium, UK and HK .
 Linstaver was conceived as a response to the challenge of combining profitability with social responsibility in a world where success is increasingly measured by financial attainment; this company seeks to utilise profitability from trade and development to promote growth, whilst successfully contributing to social projects.
                   |js}
                   |> md
