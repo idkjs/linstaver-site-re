@@ -30,7 +30,7 @@ let make = _children => {
             </nav>
             <p className="teaser--tagline">
               (
-                "Linstaver  is and  Investment, Importer and Exporter Company based in Belgium, UK and HK"
+                "Linstaver is an Investment, Importer and Exporter Company based in Belgium, UK and HK"
                 |> s
               )
             </p>
