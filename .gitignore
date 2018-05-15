@@ -24,3 +24,4 @@ lib/
 !src/layouts/index.js
 !src/pages/index.js
 !src/components/ParallaxScroll.js
+Development.md
