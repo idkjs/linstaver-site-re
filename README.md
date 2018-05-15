@@ -1,1 +1,1 @@
-# [Linstaver.com](www.linstaver.com) landing page
+# [Linstaver.com](https://www.linstaver.com) landing page
