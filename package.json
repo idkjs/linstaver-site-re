@@ -6,7 +6,7 @@
   "dependencies": {
     "basicscroll": "^2.1.1",
     "gatsby-plugin-google-analytics": "^1.0.28",
-    "marked": "^0.3.19",
+    "marked": "^0.8.0",
     "normalize.css": "^8.0.0",
     "re-classnames": "^1.0.0",
     "react-helmet": "^5.2.0",
